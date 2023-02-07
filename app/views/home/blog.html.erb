@@ -1,0 +1,53 @@
+<html>
+
+<head>
+<title>My Webstore</title>
+</head>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><body>
+
+<body>
+<h1>Welcome to Mike's blog!</h1>
+
+<p>This page was written by <%= @name %></p>
+
+<h2>
+    <p><%= link_to "Buy my products!", "/" %></p>
+    <p><%= link_to "Meet the team!", "/about" %></p>
+</h2>
+
+<h3>
+It's a lovely day here at the United States Naval Academy.
+</h3>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<h3>
+Michael Wakeham named best pickleball player in all the land!
+</h3>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<h3>
+Welcome to www.creedthoughts.gov.www.creedthoughts!
+</h3>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+</body>
+</html>
+
+<h3>Write something for us to post!</h3>
+
+<!-- HTML Form -->
+<form action="/poll" method="POST">
+    <label>Title:</label>
+    <input name="post_title" type="text" placeholder="Title your article">
+    <br>
+    <label>Article:</label>
+    <input name="post_content" type="textarea" rows=10 col=100 placeholder="What's on your mind?">
+    <br>
+    <input type="submit">
+</form>
