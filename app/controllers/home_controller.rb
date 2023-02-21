@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
 
+skip_before_action :verify_authenticity_token
+
     def index
         @name = "Michael Wakeham"
         @myproducts = 
@@ -64,5 +66,19 @@ class HomeController < ApplicationController
 
     def blog
         @name = "Michael Wakeham"
+        @blogpost = Blog.all
+    end
+
+    def poll
+        @title = params[:title]
+        @content = params[:article]
+    end
+
+    def create
+        newpost = Blog.new(
+            title: params[:title],
+            article: params[:article])
+        newpost.save
+        redirect_to '/blog'
     end
 end

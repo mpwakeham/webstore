@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   root "home#index"
   get '/about', to: 'home#about'
   get '/blog', to: 'home#blog'
+  post '/poll', to: 'home#poll'
+  post '/blog', to: 'home#create'
 
 end

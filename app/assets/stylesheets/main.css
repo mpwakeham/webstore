@@ -1,6 +1,7 @@
 h1
 {
-    background-color: cornflowerblue
+    background-color: cornflowerblue;
+    text-align: center;
 }
 
 table, th, td 
