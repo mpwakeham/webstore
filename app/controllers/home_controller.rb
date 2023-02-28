@@ -77,7 +77,7 @@ skip_before_action :verify_authenticity_token
     def create
         newpost = Blog.new(
             title: params[:title],
-            article: params[:article])
+            body: params[:article])
         newpost.save
         redirect_to '/blog'
     end
