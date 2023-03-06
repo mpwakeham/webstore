@@ -47,5 +47,14 @@ skip_before_action :verify_authenticity_token
             body: params[:body])
         newpost.save
         redirect_to '/blog'
+        
+        newproduct = Index.new(
+            img: params[:img],
+            name: params[:name],
+            description: params[:description]
+            price: params[:price]
+            quantity: params[:quantity])
+        newproduct.save
+        redirect_to '/'
     end
 end
