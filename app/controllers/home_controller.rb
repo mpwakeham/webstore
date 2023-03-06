@@ -4,40 +4,7 @@ skip_before_action :verify_authenticity_token
 
     def index
         @name = "Michael Wakeham"
-        @myproducts = 
-        [
-            {
-                img: 'ps5.jpg',
-                name: 'Playstation 5',
-                description: 'Hard to find. Snap one up while you can. Totally legit.',
-                price: '$499.99',
-                quantity: 'Just 1'
-            },
-
-            {
-                img: 'puppy.jpg',
-                name: 'Puppy',
-                description: 'Cute. Fun. Loving. Fill that void in your life.',
-                price: '$3500.00',
-                quantity: '8 male, 5 female'
-            },
-
-            {
-                img: 'orangepeanut.jpg',
-                name: 'Orange Peanut',
-                description: 'An orange peanut? For me? Well, I accept you.',
-                price: '$1.99',
-                quantity: '50ish'
-            },
-
-            {
-                img: 'crazyfrog.jpg',
-                name: 'Crazy Frog',
-                description: 'Stuck in my head. Music is too catchy.',
-                price: '$10.00',
-                quantity: '2'
-            }
-        ]
+        @myproducts = Index.all
     end
 
     def about
@@ -71,13 +38,13 @@ skip_before_action :verify_authenticity_token
 
     def poll
         @title = params[:title]
-        @content = params[:article]
+        @content = params[:body]
     end
 
     def create
         newpost = Blog.new(
             title: params[:title],
-            body: params[:article])
+            body: params[:body])
         newpost.save
         redirect_to '/blog'
     end

@@ -15,15 +15,31 @@
 <p><%= link_to "What's on my mind?", "/blog" %></p>
 </h2>
 
+<form action="/index" method="POST">
+    <label>Image:</label>
+    <input name="title" type="text" placeholder="Image">
+    <label>Name:</label>
+    <input name="title" type="text" placeholder="Name">
+    <label>Description:</label>
+    <input name="title" type="text" placeholder="Description">
+    <label>Price:</label>
+    <input name="title" type="text" placeholder="Price">
+    <label>Quantity:</label>
+    <input name="title" type="text" placeholder="Quantity">
+    <br>
+    <br>
+    <input type="submit">
+</form>
+
 <table class = "table table-striped">
     <tbody>
         <% @myproducts.each do |product| %>
         <tr>
-            <td><%= image_tag product[:img] %></td>
-            <td><%= product[:name] %></td>
-            <td><%= product[:description] %></td>
-            <td><%= product[:price] %></td>
-            <td><%= product[:quantity] %></td>
+            <td><%= image_tag product.img %></td>
+            <td><%= product.name %></td>
+            <td><%= product.description %></td>
+            <td><%= product.price %></td>
+            <td><%= product.quantity %></td>
         </tr>
         <% end %>
     </tbody>
