@@ -53,8 +53,8 @@ skip_before_action :verify_authenticity_token
         newproduct = Index.new(
             img: params[:img],
             name: params[:name],
-            description: params[:description]
-            price: params[:price]
+            description: params[:description],
+            price: params[:price],
             quantity: params[:quantity])
         newproduct.save
         redirect_to '/'
