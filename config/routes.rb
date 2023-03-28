@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/about', to: 'home#about'
   get '/blog', to: 'home#blog'
   post '/poll', to: 'home#poll'
-  post '/blog', to: 'home#create'
+  post '/blog', to: 'home#create_blog'
+  post '/', to: 'home#create_products'
+
 
 end
