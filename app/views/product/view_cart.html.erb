@@ -1,0 +1,14 @@
+<h1>Your Cart</h1>
+<% if @cart.empty? %>
+    <h2>There is nothing in your cart!</h2>
+<% else %>
+
+<ul>
+<% @items.each do |product, count| %>
+    <li><%= pluralize(count, product.name) %></li>
+<% end %>
+</ul>
+<%=link_to "Checkout", checkout_path, class: "btn btn-primary"%>
+<% end %>
+<hr/>
+<%=link_to "Keep Shopping", root_path %>

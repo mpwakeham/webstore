@@ -15,6 +15,18 @@
 <p><%= link_to "What's on my mind?", "/blog" %></p>
 </h2>
 
+<!-- cart banner -->
+<% if @item_count >0%>
+  <div class="alert alert-primary">
+    You have <%=pluralize(@item_count,"item")%> in your cart &mdash; <%= link_to "Checkout", view_cart_path %>
+  </div>
+<% end %>
+
+<!-- flash message -->
+<% if flash[:notice] %>
+    <div class="alert alert-success"> <%= flash[:notice]%> </div>
+<% end %>
+
 <form action="/" method="POST">
     <label>Image:</label>
     <input name="img" type="text" placeholder="Image">
@@ -38,8 +50,21 @@
             <td><%= image_tag product.img %></td>
             <td><%= product.name %></td>
             <td><%= product.description %></td>
-            <td><%= product.price %></td>
-            <td><%= product.quantity %></td>
+            <td>$<%= product.price %></td>
+            <td>
+            <% if product.quantity == 0 %>
+            <span class="badge bg-danger">sold out</span>
+            <% elsif product.quantity < 3 %>
+            <span class="badge bg-warning">only <%= product.quantity %> left! </span>
+            <% else %>
+            <span class="badge bg-secondary"><%= product.quantity %> available </span>
+            <% end %>
+            </td>
+            <td>
+            <% if product.quantity > 0 %>
+            <%= link_to "Add To Cart", add_to_cart_path(product), class: "btn btn-primary" %>
+            <% end %>
+            </td>
         </tr>
         <% end %>
     </tbody>

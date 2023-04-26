@@ -60,3 +60,8 @@ skip_before_action :verify_authenticity_token
         redirect_to '/'
     end
 end
+
+def api
+    @products = Index.all
+    render json: @products and return
+end

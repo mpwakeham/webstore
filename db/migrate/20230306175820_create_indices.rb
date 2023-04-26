@@ -4,8 +4,8 @@ class CreateIndices < ActiveRecord::Migration[7.0]
       t.string :img
       t.string :name
       t.string :description
-      t.string :price
-      t.string :quantity
+      t.decimal :price
+      t.integer :quantity
 
       t.timestamps
     end
